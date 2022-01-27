@@ -10,12 +10,10 @@ function darkMode() { //SWITCH EVENT DARK LIGHT MODE
 }
 
 const buttonCta = document.querySelector("#cta");
-const mainP = document.querySelector("#p1");
+const element = document.querySelector("p");
+  
 buttonCta.addEventListener("click",startClass);
 function startClass() {//START CLASS
-  element.innerHTML = "New Heading"
-  let answer = prompt(
-    "Hi and welcome to your first potion class! Shall we get started? yes / no"
-  ).toLowerCase();
+  element.innerHTML = "Hi and welcome to your first potion class! Shall we get started?"
 
 }
