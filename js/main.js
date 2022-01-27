@@ -13,9 +13,18 @@ const colores = [
     'red',
     'gray',
 ]*/
+/*
+let toggle = document.getElementById('toggle');
 
-document.getElementById("light_dark").addEventListener("click", darkMode);
-
+toggle.onclick = function (){
+    toggle.classList.toggle(active);
+};*/
+const body = document.querySelector('body');
+const toggleButton = document.querySelector("#toggle");
+const switchMode = document.querySelector(".switch_mode");
+toggleButton.addEventListener("click", darkMode);
 function darkMode() {
-  alert ("Hello World!");
+    switchMode.classList.toggle("active");
+    body.classList.toggle("active");
+    toggleButton.classList.toggle("active");
 }
