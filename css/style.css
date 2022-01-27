@@ -1,0 +1,107 @@
+/**************RESET*************/
+*{
+    margin: 0%;
+    padding: 0%;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif;
+}
+/********BODY******/
+body{
+  height: 100vh;
+  width:100%;
+}
+h1{
+  font-family: 'Milonga', cursive;
+  font-size: 48px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  background-color: #5078f2;
+  background-image: linear-gradient(315deg, #5078f2 0%, #efe9f4 74%);
+  padding: 0% 0% 2% 0%;
+}
+
+body.back-index{
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%);
+  background-position: center;
+
+}
+/*******NAVIGATION******/
+.nav-s{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 5%;
+  height: 50px;
+}
+.nav-s ul{
+  display: flex; 
+  justify-content: center;
+  width: 100%;
+}
+
+.nav-s ul li{
+  display: inline-block;
+  padding: 4px 2%;
+  font-weight:300;
+  font-size: 14px;
+}
+.nav-s ul li a{
+  color: rgb(118, 46, 252);
+}
+
+.nav-s ul li  :hover{
+  color: #141414;
+}
+
+main{
+  padding: -20% 10% 0% 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+/********HOMEPAGE CSS*********/
+.center_txt_home{
+ align-items: center;
+ width: 45%;
+ font-size: 1.75rem;
+}
+
+.center_txt_home h1{
+  text-align: center;
+}
+.center_txt_home p {
+  text-align: center;
+  font-size: 1rem;
+  color: rgb(218, 225, 231);
+}
+/*********BUTTONS CUSTOM**********/
+button {
+   padding: 7px;
+   border-radius: 10px;
+   cursor: pointer;
+   font-size: 14px;
+}
+
+button.cta {
+  background-color: #2ecc7000;
+  border-width: 2px;
+  border-color: #FBB605;
+  color: #FBB605;
+  width: 25%;
+}
+
+button.cta:hover{
+  border-color: transparent;
+  background-color: #d19706;
+  color: rgb(26, 26, 26);
+}
+
+button.cta-inactive {
+  background-color: #bdbdbd;
+}

@@ -1,0 +1,38 @@
+//FUNCTIONS-GIVE A #DATA.NAME
+//lo que este adentro de la funcion es el codigo que se ejecuta
+ //Si no la llaman, la función no se va a ejecutar por mas que la hayan declarado
+
+ /**
+let newUser;
+let newPassword;
+
+//declarada
+function createUser(newUser,newPassword) {
+    newUser = prompt ('Create a user');
+    newPassword = prompt ('Create your password');
+}
+
+function logIn(user,password){
+    if(user == 'hello' && password == '123'){
+        prompt('Welcome back!');
+    } else{
+      console.error('I m sorry you are not allowed here..')
+    }
+}
+**/
+
+//LLAMADOS
+/*createUser();
+logIn(newUser, newPassword);*/
+
+/*
+function member(){
+  function existantUser(user,password){
+    this.user = user;
+    this.password =password
+  }
+  var getUser = document.getElementById('username').value;
+  console.log('the user is:', getUser);
+  var getPassword = document.getElementById('password').value;
+  console.log('yourpassword is:', getPassword);
+}
