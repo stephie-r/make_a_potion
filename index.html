@@ -1,45 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Milonga&family=Poppins:wght@300;500&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Milonga&family=Poppins:wght@300;500&display=swap");
     </style>
-</head>
-<body class="back-index">
+  </head>
+  <body class="back-index">
     <header class="nav-s">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="links/my_potions/my_potions.html">My potions</a></li>
-            <li><a href="links/recepies/recepies.html">Recepies</a></li>
-            <li><a href="links/create_a_potion/create_a_potion.html">Create a new potion</a></li>
-            <li><a href="links/ingridients/ingridients.html">Ingridients</a></li>
-            <li><a href="links/login/login.html">Login</a></li>
-        </ul>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="links/my_potions/my_potions.html">My potions</a></li>
+        <li><a href="links/recepies/recepies.html">Recepies</a></li>
+        <li>
+          <a href="links/create_a_potion/create_a_potion.html"
+            >Create a new potion</a
+          >
+        </li>
+        <li><a href="links/ingridients/ingridients.html">Ingridients</a></li>
+        <li><a href="links/login/login.html">Login</a></li>
+        <li>
+          <div id="toggle">
+            <i class="switch_mode"></i>
+          </div>
+        </li>
+      </ul>
     </header>
+
     <main>
-        <div class="center_txt_home">
-            <h1>Welcome to potions class</h1>
-            <p>Here you'll be able to create your favourite potions! But there is a catch! You have to try and create
-                them withought guideance! We'll help you with the first one don't worry!</p>
-            <button class="cta">Start class!</button>
-            <br>
-            <p>
-                <label for="">Potions:</label><label for="" id="potion_quantity">0</label>
-            </p>
-        </div>
-    <div>
-    <form>
-        <input type='text' placeholder="name" id='name'>
-        <input type='number' placeholder="age" id='number'>
-        <button id='button' type='submit'>Click me</button>
-    </form>
-    </div>
+      <div class="center_txt_home">
+        <h1>Welcome to potions class</h1>
+        <p>
+          Here you'll be able to create your favourite potions! But there is a
+          catch! You have to try and create them withought guideance! We'll help
+          you with the first one don't worry!
+        </p>
+        <button class="cta">Start class!</button>
+        <br />
+        <p>
+          <label for="">Potions:</label
+          ><label for="" id="potion_quantity">0</label>
+        </p>
+      </div>
+      <div>
+        <button id="light_dark" type="submit">Click me</button>
+      </div>
     </main>
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
