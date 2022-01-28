@@ -1,29 +1,32 @@
+//DECLARACIONES
 const body = document.querySelector("body");
 const toggleButton = document.querySelector("#toggle");
 const switchMode = document.querySelector(".switch_mode");
+const buttonCta = document.querySelector("#cta");
+const element = document.querySelector("#p");
+const container = document.querySelector("div");
+
+//SWITCH EVENT DARK LIGHT MODE
 toggleButton.addEventListener("click", darkMode);
 function darkMode() {
-  //SWITCH EVENT DARK LIGHT MODE
   switchMode.classList.toggle("active");
   body.classList.toggle("active");
   toggleButton.classList.toggle("active");
 }
 
-const buttonCta = document.querySelector("#cta");
-const element = document.querySelector("#p");
 //START CLASS
-buttonCta.addEventListener("click", startClass);
-function startClass() { 
+buttonCta.addEventListener("click", () =>
+ {
   element.innerHTML =
     "Hi and welcome to your first potion class! Shall we get started?";
   buttonCta.innerHTML = "Yes";
-}
+  buttonCta.addEventListener("click",startClass());
+})
 
-function addElement () {
+function addElement() {
   const newButton = document.createElement("button");
   const element = document.querySelector(".center_txt_home");
   const text = document.createTextNode("No");
-  const style = document.querySelector(".cta");
   element.appendChild(newButton);
   newButton.appendChild(text);
 }
@@ -198,14 +201,16 @@ function mixing(mix, keepMixing) {
     }
   }
 }
-function returnFelixFelicis() {//1POTION
+function returnFelixFelicis() {
+  //1POTION
   console.log(
     "The aroma is perfect and the silver lines of the bervarge are exquisite!"
   );
   alert(
     "You have fabricated the perfect Felix Felicis also known as liquid luck!"
   );
-  class Potion {//OBJECT CORRECT POTION
+  class Potion {
+    //OBJECT CORRECT POTION
     constructor(color, ingridients, cookingPoint) {
       this.color = color;
       this.ingridients = ingridients;
