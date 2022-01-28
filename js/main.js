@@ -3,8 +3,11 @@ const body = document.querySelector("body");
 const toggleButton = document.querySelector("#toggle");
 const switchMode = document.querySelector(".switch_mode");
 const buttonCta = document.querySelector("#cta");
+const buttonYes = document.querySelector("#Yes");
+const buttonNo = document.querySelector("#No");
 const element = document.querySelector("#p");
 const container = document.querySelector("div");
+let potionsSuccess = 0;
 
 //SWITCH EVENT DARK LIGHT MODE
 toggleButton.addEventListener("click", darkMode);
@@ -19,19 +22,11 @@ buttonCta.addEventListener("click", () =>
  {
   element.innerHTML =
     "Hi and welcome to your first potion class! Shall we get started?";
-  buttonCta.innerHTML = "Yes";
   buttonCta.addEventListener("click",startClass());
 })
 
-function addElement() {
-  const newButton = document.createElement("button");
-  const element = document.querySelector(".center_txt_home");
-  const text = document.createTextNode("No");
-  element.appendChild(newButton);
-  newButton.appendChild(text);
-}
 
-let potionsSuccess = 0;
+
 function startClass() {
   let answer = prompt(
     "Hi and welcome to your first potion class! Shall we get started? yes / no"
@@ -226,7 +221,9 @@ function returnFelixFelicis() {
     "Squil bulb, Murtlap tenctacle, Occamy eggshell",
     "6 months brewing time"
   );
+  element.innerHTML = "Felix Felicis uses : Squil bulb, Murtlap tenctacle & Occamy eggshell";
   FelixFelicis.ingridientList();
+
   return 1;
 }
 function returnRatCup() {
