@@ -219,7 +219,7 @@ function returnFelixFelicis() {
     "Squil bulb, Murtlap tenctacle, Occamy eggshell",
     "6 months brewing time"
   );
-  element.innerHTML = "Felix Felicis uses : Squil bulb, Murtlap tenctacle & Occamy eggshell";
+  element.innerHTML = "Felix Felicis contains: " + FelixFelicis.ingridients;
   FelixFelicis.ingridientList();
 
   return 1;
