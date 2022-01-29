@@ -25,8 +25,6 @@ buttonCta.addEventListener("click", () =>
   buttonCta.addEventListener("click",startClass());
 })
 
-
-
 function startClass() {
   let answer = prompt(
     "Hi and welcome to your first potion class! Shall we get started? yes / no"
