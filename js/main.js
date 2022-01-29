@@ -114,37 +114,19 @@ function stiring(stir, keepStiring) {
 function returnWater() {
   console.log("Your potion looks like water");
   alert("Your potion looks the same");
-  class Potion {
-    constructor(color, ingridients, cookingPoint) {
-      this.color = color;
-      this.ingridients = ingridients;
-      this.cookingPoint = cookingPoint;
-    }
-    ingridientList() {
-      alert("You have the following ingridients: " + this.ingridients);
-    }
-  }
   const Water = new Potion(
+    "Water",
     "Transparent, no color reaction",
     "Water",
     "15 minutes"
   );
+  element.innerHTML = "You've created :" + Water.name;
   Water.ingridientList();
-  return 0;
 }
 function returnExplotion() {
   alert("Get behind me your potion is unstable");
   console.log("Your potion exploded!");
-  class Potion {
-    constructor(color, ingridients, cookingPoint) {
-      this.color = color;
-      this.ingridients = ingridients;
-      this.cookingPoint = cookingPoint;
-    }
-    ingridientList() {
-      alert("You have the following ingridients: " + this.ingridients);
-    }
-  }
+
   const Explotion = new Potion(
     "Red",
     "Smoke, Fire, Occamy eggshell",
@@ -199,22 +181,8 @@ function returnFelixFelicis() {
   console.log(
     "The aroma is perfect and the silver lines of the bervarge are exquisite!"
   );
-  alert(
-    "You have fabricated the perfect Felix Felicis also known as liquid luck!"
-  );
-  class Potion {
-    //OBJECT CORRECT POTION
-    constructor(color, ingridients, cookingPoint) {
-      this.color = color;
-      this.ingridients = ingridients;
-      this.cookingPoint = cookingPoint;
-    }
-    ingridientList() {
-      alert("You have the following ingridients: " + this.ingridients);
-    }
-  }
-
   const FelixFelicis = new Potion(
+    "Felix Felicis",
     "Molten gold",
     "Squil bulb, Murtlap tenctacle, Occamy eggshell",
     "6 months brewing time"
@@ -227,42 +195,37 @@ function returnFelixFelicis() {
 function returnRatCup() {
   alert("Your potion has turned into a hairy vase!");
   console.log("Your potion has turned into a Rat's cup!");
-  class Potion {
-    constructor(color, ingridients, cookingPoint) {
-      this.color = color;
-      this.ingridients = ingridients;
-      this.cookingPoint = cookingPoint;
-    }
-    ingridientList() {
-      alert("You have the following ingridients: " + this.ingridients);
-    }
-  }
-  const RatCup = new Potion(
+  const ratCup = new Potion(
+    "Rat Cup",
     "Brown",
     "Charcoal, Squil bulb",
     "10 minutes + reciting an enchantment badly"
   );
+  element.innerHTML = "You've created "+ ratCup.name + ratCup.ingridients ;
   RatCup.ingridientList();
   return 0;
 }
 function returnNotWorking() {
   console.log("Your potion is still not reacting..");
-  alert("Nothing seems to be happening..");
-  class Potion {
-    constructor(color, ingridients, cookingPoint) {
-      this.color = color;
-      this.ingridients = ingridients;
-      this.cookingPoint = cookingPoint;
-    }
-    ingridientList() {
-      alert("You have the following ingridients: " + this.ingridients);
-    }
-  }
   const Water = new Potion(
+    "Water",
     "Transparent, no color reaction",
     "Water",
     "15 minutes"
   );
+  element.innerHTML = "You've created :" + Water.name;
   Water.ingridientList();
   return 0;
+}
+
+class Potion {
+  constructor(name,color, ingridients, cookingPoint) {
+    this.name = name
+    this.color = color;
+    this.ingridients = ingridients;
+    this.cookingPoint = cookingPoint;
+  }
+  ingridientList() {
+    alert("You have the following ingridients: " + this.ingridients);
+  }
 }
