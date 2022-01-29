@@ -225,7 +225,4 @@ class Potion {
     this.ingridients = ingridients;
     this.cookingPoint = cookingPoint;
   }
-  ingridientList() {
-    alert("You have the following ingridients: " + this.ingridients);
-  }
 }
