@@ -8,7 +8,15 @@ const buttonNo = document.querySelector("#No");
 const element = document.querySelector("#p");
 const container = document.querySelector("div");
 let potionsSuccess = 0;
-
+//POTION CLASS
+class Potion {
+  constructor(name,color, ingredient, cookingPoint) {
+    this.name = name
+    this.color = color;
+    this.ingredient = ingredient;
+    this.cookingPoint = cookingPoint;
+  }
+}
 //SWITCH EVENT DARK LIGHT MODE
 toggleButton.addEventListener("click", darkMode);
 function darkMode() {
@@ -16,7 +24,6 @@ function darkMode() {
   body.classList.toggle("active");
   toggleButton.classList.toggle("active");
 }
-
 //START CLASS
 buttonCta.addEventListener("click", () =>
  {
@@ -24,7 +31,6 @@ buttonCta.addEventListener("click", () =>
     "Hi and welcome to your first potion class! Shall we get started?";
   buttonCta.addEventListener("click",startClass());
 })
-
 function startClass() {
   let answer = prompt(
     "Hi and welcome to your first potion class! Shall we get started? yes / no"
@@ -121,7 +127,8 @@ function returnWater() {
     "15 minutes"
   );
   element.innerHTML = "You've created :" + Water.name;
-  Water.ingridientList();
+  Water.ingredientList();
+  return 0;
 }
 function returnExplotion() {
   alert("Get behind me your potion is unstable");
@@ -132,7 +139,8 @@ function returnExplotion() {
     "Smoke, Fire, Occamy eggshell",
     "30 minutes"
   );
-  Explotion.ingridientList();
+  element.innerHTML = "Felix Felicis contains: " + Explotion.ingredient;
+  Explotion.ingredientList();
   return 0;
 }
 function startMixing() {
@@ -187,9 +195,7 @@ function returnFelixFelicis() {
     "Squil bulb, Murtlap tenctacle, Occamy eggshell",
     "6 months brewing time"
   );
-  element.innerHTML = "Felix Felicis contains: " + FelixFelicis.ingridients;
-  FelixFelicis.ingridientList();
-
+  element.innerHTML = "Felix Felicis contains: " + FelixFelicis.ingredient;
   return 1;
 }
 function returnRatCup() {
@@ -201,8 +207,8 @@ function returnRatCup() {
     "Charcoal, Squil bulb",
     "10 minutes + reciting an enchantment badly"
   );
-  element.innerHTML = "You've created "+ ratCup.name + ratCup.ingridients ;
-  RatCup.ingridientList();
+  element.innerHTML = "You've created "+ ratCup.name + ratCup.ingredient ;
+  ratCup.ingredientList();
   return 0;
 }
 function returnNotWorking() {
@@ -213,16 +219,7 @@ function returnNotWorking() {
     "Water",
     "15 minutes"
   );
-  element.innerHTML = "You've created :" + Water.name;
-  Water.ingridientList();
+  element.innerHTML = "You've created :" + Water.name + " how refreshing..";
+  Water.ingredientList();
   return 0;
-}
-
-class Potion {
-  constructor(name,color, ingridients, cookingPoint) {
-    this.name = name
-    this.color = color;
-    this.ingridients = ingridients;
-    this.cookingPoint = cookingPoint;
-  }
 }
