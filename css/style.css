@@ -88,10 +88,20 @@ main {
 .center_txt_home h1 {
   text-align: center;
 }
+.center_txt_home img{
+  width:25%;
+  width: 100px;
+  margin-left: 43.2%;
+  position: sticky;
+}
+#potionimg.water{
+  width: 100px;
+  position: sticky;
+}
 .center_txt_home p {
   text-align: center;
   font-size: 1rem;
-  color: rgb(167, 157, 172);
+  color: rgb(107, 107, 107);
 }
 /*********BUTTONS CUSTOM**********/
 div.button_index{

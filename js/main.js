@@ -1,10 +1,12 @@
-//DECLARACIONES
+//DECLARATIONS
 const body = document.querySelector("body");
 const toggleButton = document.querySelector("#toggle");
 const switchMode = document.querySelector(".switch_mode");
 const buttonCta = document.querySelector("#cta");
+const imgPotion = document.querySelector("#potionimg")
 const buttonYes = document.querySelector("#Yes");
 const buttonNo = document.querySelector("#No");
+const hedding = document.querySelector("#mainH1");
 const element = document.querySelector("#p");
 const container = document.querySelector("div");
 let potionsSuccess = 0;
@@ -17,14 +19,14 @@ class Potion {
     this.cookingPoint = cookingPoint;
   }
 }
-//SWITCH EVENT DARK LIGHT MODE
+//SWITCH EVENT DARK-LIGHT MODE
 toggleButton.addEventListener("click", darkMode);
 function darkMode() {
   switchMode.classList.toggle("active");
   body.classList.toggle("active");
   toggleButton.classList.toggle("active");
 }
-//START CLASS
+//START CLASS 
 buttonCta.addEventListener("click", () =>
  {
   element.innerHTML =
@@ -120,14 +122,15 @@ function stiring(stir, keepStiring) {
 function returnWater() {
   console.log("Your potion looks like water");
   alert("Your potion looks the same");
-  const Water = new Potion(
+  const water = new Potion(
     "Water",
     "Transparent, no color reaction",
     "Water",
     "15 minutes"
   );
-  element.innerHTML = "You've created :" + Water.name;
-  Water.ingredientList();
+  element.innerHTML = "You've created :" + water.ingredient + " how refreshing..";
+  hedding.innerHTML = "Created: " + water.name;
+  imgPotion.classList.toggle("water");
   return 0;
 }
 function returnExplotion() {
@@ -135,12 +138,13 @@ function returnExplotion() {
   console.log("Your potion exploded!");
 
   const Explotion = new Potion(
+    "Unstable Potion!",
     "Red",
     "Smoke, Fire, Occamy eggshell",
     "30 minutes"
   );
-  element.innerHTML = "Felix Felicis contains: " + Explotion.ingredient;
-  Explotion.ingredientList();
+  element.innerHTML = "You've created: " + Explotion.ingredient;
+  hedding.innerHTML = "" + Explotion.name;
   return 0;
 }
 function startMixing() {
@@ -196,30 +200,32 @@ function returnFelixFelicis() {
     "6 months brewing time"
   );
   element.innerHTML = "Felix Felicis contains: " + FelixFelicis.ingredient;
+  hedding.innerHTML = ""+ FelixFelicis.name;
   return 1;
 }
 function returnRatCup() {
   alert("Your potion has turned into a hairy vase!");
   console.log("Your potion has turned into a Rat's cup!");
-  const ratCup = new Potion(
-    "Rat Cup",
+  const failedPotion = new Potion(
+    "A gastly concoction",
     "Brown",
     "Charcoal, Squil bulb",
     "10 minutes + reciting an enchantment badly"
   );
-  element.innerHTML = "You've created "+ ratCup.name + ratCup.ingredient ;
-  ratCup.ingredientList();
+  element.innerHTML = "Your ingredients are: " + failedPotion.ingredient ;
+  hedding.innerHTML = "You've created " + failedPotion.name;
   return 0;
 }
 function returnNotWorking() {
   console.log("Your potion is still not reacting..");
-  const Water = new Potion(
+  const water = new Potion(
     "Water",
     "Transparent, no color reaction",
     "Water",
-    "15 minutes"
+    "15 minutes",
   );
-  element.innerHTML = "You've created :" + Water.name + " how refreshing..";
-  Water.ingredientList();
+  element.innerHTML = "You've created :" + water.name + " how refreshing..";
+  hedding.innerHTML = "" + water.name;
+  imgPotion.classList.toggle("water");
   return 0;
 }
