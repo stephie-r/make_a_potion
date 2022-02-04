@@ -113,7 +113,6 @@ div.button_index{
 }
 
 button {
-  cursor: pointer;
   font-size: 14px;
   margin: 8px 2%;
   height: 35px;
@@ -124,6 +123,7 @@ button {
 }
 
 button.cta {
+  cursor: pointer;
   background-color: #2ecc7000;
   border-color: #a594f9;
   color: #6247aa;
@@ -136,15 +136,17 @@ button.cta:hover {
 }
 
 button.inactive {
+  cursor: default;
   color: transparent;
   border-style: none;
   background-color: transparent;
 }
 
-button.cta .disabled{
+button.cta.disabled{
   background-color: transparent;
   border-style: none;
   color: transparent;
+  cursor:none;
 }
 /*********TYPE STYLE**********/
 h1 {

@@ -3,17 +3,16 @@ const body = document.querySelector("body");
 const toggleButton = document.querySelector("#toggle");
 const switchMode = document.querySelector(".switch_mode");
 const buttonCta = document.querySelector("#cta");
-const imgPotion = document.querySelector("#potionimg")
 const buttonYes = document.querySelector("#Yes");
 const buttonNo = document.querySelector("#No");
 const hedding = document.querySelector("#mainH1");
+const imgP = document.querySelector("#pImg");
 const element = document.querySelector("#p");
-const container = document.querySelector("div");
+const container = document.querySelector("#indexMDiv");
 let potionsSuccess = 0;
-//POTION CLASS
 class Potion {
-  constructor(name,color, ingredient, cookingPoint) {
-    this.name = name
+  constructor(name, color, ingredient, cookingPoint) {
+    this.name = name;
     this.color = color;
     this.ingredient = ingredient;
     this.cookingPoint = cookingPoint;
@@ -25,51 +24,59 @@ function darkMode() {
   switchMode.classList.toggle("active");
   body.classList.toggle("active");
   toggleButton.classList.toggle("active");
+  console.log(toggleButton.classList) ;
+  if (toggleButton.classList == "active"){
+  imgP.src = "../../img/svg/pD.svg";
+  }
+  else if (toggleButton.classList == ""){
+    imgP.src = "../../img/svg/emptyPotion.svg";
+    }
 }
-//START CLASS 
-buttonCta.addEventListener("click", () =>
- {
-  element.innerHTML =
-    "Hi and welcome to your first potion class! Shall we get started?";
-  buttonCta.addEventListener("click",startClass());
-})
+//START CLASS
+buttonCta.addEventListener("click", () => {
+  element.innerHTML = "Hi and welcome to your first potion class! Shall we get started?";
+  //CLASS
+  buttonNo.classList.add("cta");
+  buttonYes.classList.add("cta");
+  buttonCta.classList.add("inactive");
+  buttonCta.classList.remove("cta");
+  buttonYes.classList.remove("inactive");
+  buttonNo.classList.remove("inactive");
+  //EVENT
+  buttonYes.addEventListener("click", startClass());
+  buttonNo.addEventListener("click", stopClass());
+});
 function startClass() {
-  let answer = prompt(
-    "Hi and welcome to your first potion class! Shall we get started? yes / no"
-  ).toLowerCase();
+  //let answer = addEventListener
+    "Hi and welcome to your first potion class! Shall we get started? yes / no";
   potionsSuccess += returnPotions(answer);
-  console.log(`You have created ${potionsSuccess} potions`);
-  alert(`You have created ${potionsSuccess} potions`);
+  hedding.innerHTML = `You have created ${potionsSuccess} potions`;
   var elem = document.getElementById("potion_quantity");
   elem.innerHTML = potionsSuccess;
 }
 function returnPotions(answer) {
-  if (answer == "yes") {
-    alert(
-      "Hi I am so exited to begin! let s get started! We ll give you a bowl and some Mandrake leaves! First of all let's start stiring!"
-    );
+  if (
+    answer ==
+    buttonYes.addEventListener("click", () => {
+      element.innerHTML =
+        "Hi I am so exited to begin! let s get started! We ll give you a bowl and some Mandrake leaves! First of all let's start stiring!";
+      hedding.innerHTML = "Stir!";
+    })
+  ) {
     //PREPATATION FIRST STEP
     return startStiring();
-  } else if (answer == "no") {
-    alert(
-      "Are you sure? Well alchemy is down the hall to the right thanks for stopping by!"
-    );
-    console.log("Snape glares at you for leaving the class.");
   }
 
   //NESTING CONDITIONALS ELSE
-  else {
-    alert("Well quite quiet are we? Don t worry I ll help you out!");
-    console.log("You will be persuaded by your prefect to participate");
-    let answer2 = prompt(
-      " Hi I am your prefect and welcome to your first potion class! Shall we get started? yes / no"
-    ).toLowerCase();
-    if (amswer2 == "yes") {
-      alert(
-        "Hi I am so exited to begin! let s get started! We ll give you a bowl and some Mandrake leaves! First of all let s start stiring!"
-      );
-      return startStiring();
-    } else if (answer2 == "no") {
+  else if (answer == buttonNo.addEventListener("click", ()=>{
+    hedding.innerHTML ="Well quite quiet are we? Don't worry I ll help you out!";
+    element.innerHTML =
+      "Hi I am your prefect and welcome to your first potion class! Shall we get started?"})){
+    if (answer2 == buttonYes.addEventListener("click",()=> { 
+      element.innerHTML =
+        "Hi I am so exited to begin! let s get started! We'll give you a bowl and some Mandrake leaves! First of all let's start stiring!";
+      return startStiring();}))
+     else if (answer2 == "no") {
       alert(
         "Are you sure? Well alchemy is down the hall to the right thanks for stopping by!"
       );
@@ -128,9 +135,9 @@ function returnWater() {
     "Water",
     "15 minutes"
   );
-  element.innerHTML = "You've created :" + water.ingredient + " how refreshing..";
+  element.innerHTML =
+    "You've created :" + water.ingredient + " how refreshing..";
   hedding.innerHTML = "Created: " + water.name;
-  imgPotion.classList.toggle("water");
   return 0;
 }
 function returnExplotion() {
@@ -176,7 +183,8 @@ function mixing(mix, keepMixing) {
       alert("Be meticulouse and start mixing!");
       return mixing(mix, true);
     }
-  } else {
+  } 
+  else {
     //FALSE
     if (mix == 2) {
       //CORRECT FORMULA WALKTHROUGH
@@ -200,7 +208,7 @@ function returnFelixFelicis() {
     "6 months brewing time"
   );
   element.innerHTML = "Felix Felicis contains: " + FelixFelicis.ingredient;
-  hedding.innerHTML = ""+ FelixFelicis.name;
+  hedding.innerHTML = "" + FelixFelicis.name;
   return 1;
 }
 function returnRatCup() {
@@ -212,7 +220,7 @@ function returnRatCup() {
     "Charcoal, Squil bulb",
     "10 minutes + reciting an enchantment badly"
   );
-  element.innerHTML = "Your ingredients are: " + failedPotion.ingredient ;
+  element.innerHTML = "Your ingredients are: " + failedPotion.ingredient;
   hedding.innerHTML = "You've created " + failedPotion.name;
   return 0;
 }
@@ -222,7 +230,7 @@ function returnNotWorking() {
     "Water",
     "Transparent, no color reaction",
     "Water",
-    "15 minutes",
+    "15 minutes"
   );
   element.innerHTML = "You've created :" + water.name + " how refreshing..";
   hedding.innerHTML = "" + water.name;
